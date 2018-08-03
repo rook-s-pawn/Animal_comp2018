@@ -36,18 +36,11 @@ mod = RandomForestClassifier()
 
 #パラメータ(RF)
 parameters = {
-    'n_estimators' : [300],#[150,200,300],#[300],#[150], # test_rate=0.05の時 150で93%
-    'max_depth'    : [30,50],#[10,30,50],#
-    'random_state' : [58],#[7], # test_rate=0.05の時 58で93%
+    'n_estimators' : [300],
+    'max_depth'    : [30,50],
+    'random_state' : [58],
     'criterion' :['gini', 'entropy'],
 }
-"""
-#パラメータ(svm)
-parameters = [
-#{"C": [3000,5000],"kernel":["linear"]},
-{"C": [3000,5000],"kernel":["rbf"],"gamma":[0.001,0.0001]}
-]
-"""
 
 clf = GridSearchCV(mod, parameters,cv=n_cv,n_jobs=-1)
 clf.fit(data_train, label_train.as_matrix().reshape(-1,))

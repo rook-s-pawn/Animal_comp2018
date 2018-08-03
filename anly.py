@@ -36,9 +36,9 @@ mod = RandomForestClassifier()
 
 #パラメータ(RF)
 parameters = {
-    'n_estimators' : [300],#[150,200,300],#[300],#[150], # test_rate=0.05の時 150で93%
-    'max_depth'    : [30,50],#[10,30,50],#
-    'random_state' : [58],#[7], # test_rate=0.05の時 58で93%
+    'n_estimators' : [300],
+    'max_depth'    : [30,50],
+    'random_state' : [58],
     'criterion' :['gini', 'entropy'],
 }
 

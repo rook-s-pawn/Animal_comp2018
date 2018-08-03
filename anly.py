@@ -41,13 +41,6 @@ parameters = {
     'random_state' : [58],#[7], # test_rate=0.05の時 58で93%
     'criterion' :['gini', 'entropy'],
 }
-"""
-#パラメータ(svm)
-parameters = [
-#{"C": [3000,5000],"kernel":["linear"]},
-{"C": [3000,5000],"kernel":["rbf"],"gamma":[0.001,0.0001]}
-]
-"""
 
 clf = GridSearchCV(mod, parameters,cv=n_cv,n_jobs=-1)
 clf.fit(data_train, label_train.as_matrix().reshape(-1,))

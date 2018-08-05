@@ -78,13 +78,13 @@ np.set_printoptions(precision=2)
 plt.figure()
 mf.plot_confusion_matrix(cnf_matrix, classes=["0","1"],
                      title='Confusion matrix, without normalization')
-plt.savefig("fig/matrix/"+ "mf_without_normalization.png")
+plt.savefig("fig/"+ "mf_without_normalization.png")
 
 # Plot normalized confusion matrix
 plt.figure()
 mf.plot_confusion_matrix(cnf_matrix, classes=["0","1"], normalize=True,
                      title='Normalized confusion matrix')
-plt.savefig("fig/matrix/"+ "mf_Normalized_confusion.png")
+plt.savefig("fig/"+ "mf_Normalized_confusion.png")
 
 print('Best cross-validation: {}'.format(clf.best_score_))
 #plt.show()

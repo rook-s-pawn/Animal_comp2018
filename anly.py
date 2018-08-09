@@ -8,6 +8,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV
 from sklearn.externals import joblib
 
+# 保存用ディレクトリがなかったら作成
+if not os.path.exists('fig/'):
+   os.mkdir('fig/')
+
+if not os.path.exists('predict_file/'):
+   os.mkdir('predict_file/')
+
 name = ['sum_d(m)','v_max','oneday_d_mean','one_day_d_median','lat_mean','lon_mean','v_non_stay_mean','v_non_stay_median','v_non_stay_variance','lon_variance','lat_variance','lon_median','lat_median']
 
 data = pd.read_csv("feature_csv/train_feature.csv", header=0)

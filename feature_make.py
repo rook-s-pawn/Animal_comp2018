@@ -7,9 +7,14 @@ import csv
 from geopy.distance import vincenty
 import re
 from statistics import mean, median,variance,stdev
+import os
 
 # path
 make_csvdir = "feature_csv/"
+
+# 保存用ディレクトリがなかったら作成
+if not os.path.exists(make_csvdir):
+   os.mkdir(make_csvdir)
 
 # trianの中にあるcsvデータを全読み込みする
 train_files = glob.glob('abc2018dataset/train/*.csv')

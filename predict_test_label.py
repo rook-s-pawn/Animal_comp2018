@@ -6,10 +6,15 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn import cross_validation, metrics, svm
 from sklearn.grid_search import GridSearchCV
 from sklearn.externals import joblib
+import os
 
 # testデータの特徴量ファイルを読み込む
 data_dir = "feature_csv/"
 data_file = data_dir + 'test_feature.csv'
+
+# 保存用ディレクトリがなかったら作成
+if not os.path.exists('result_label/'):
+   os.mkdir('result_label/')
 
 #データを読み込む
 name = ['sum_d(m)','v_max','oneday_d_mean','one_day_d_median','lat_mean','lon_mean','v_non_stay_mean','v_non_stay_median','v_non_stay_variance','lon_variance','lat_variance','lon_median','lat_median']
